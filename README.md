@@ -19,12 +19,21 @@ execute:
     chmod +x *
     sudo ./install.sh or sudo bash install.sh
 
+<br/>
+
 #Usage:
+
+<br/>
+
     chmod +x install.sh
     sudo ./install.sh or sudo bash install.sh
+
+<br/>
+
 It will install all packages that are missing and it will automaticaly start...
 
 Next Usage:
+
     sudo ./evil
 
 Not all application will be able to decompile or recompile
