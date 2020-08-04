@@ -4,7 +4,13 @@ Its come with apktool version 2.4.1
 
 check out other ver here: https://ibotpeaches.github.io/Apktool/
 
-<img src="screenshots/1.png" width="50" >
+<img src="screenshots/1.png" width="500" >
+
+<img src="screenshots/2.png" width="500" >
+
+<img src="screenshots/3.png" width="500" >
+
+<img src="screenshots/4.png" width="500" >
 
 If you want upgraded version go to apktool_v2.4.1 directory
 
