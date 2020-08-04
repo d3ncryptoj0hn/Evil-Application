@@ -6,20 +6,22 @@ check out other ver here: https://ibotpeaches.github.io/Apktool/
 
 If you want upgraded version go to apktool_v2.4.1 directory
 
-run:
+type:
 
     cd apktool_v2.4.1
     chmod +x *
     sudo ./install.sh or sudo bash install.sh
 
-#Usage:
+Install Missing Packages manually or run
+
+type:
 
     chmod +x install.sh
     sudo ./install.sh or sudo bash install.sh
 
 It will install all packages that are missing and it will automaticaly start...
 
-Next Usage:
+Next use:
 
     sudo ./evil
 
