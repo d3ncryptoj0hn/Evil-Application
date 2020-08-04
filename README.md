@@ -1,6 +1,6 @@
 # Evil-Application
 
-#Its come with apktool version 2.4.1
+Its come with apktool version 2.4.1
 
 check out other ver here: https://ibotpeaches.github.io/Apktool/
 
