@@ -1,10 +1,6 @@
 # Evil-Application
 
-<br />
-
 #Its come with apktool version 2.4.1
-
-<br/>
 
 check out other ver here: https://ibotpeaches.github.io/Apktool/
 
@@ -31,6 +27,5 @@ tested on application release in 2018-2019
 
 Dont use for illegal purposes,
 im not responsible on any malicious use of this tool.
-
 
 Happy Learning!
