@@ -12,7 +12,7 @@ Its come with apktool version 2.4.1
 
 check out other ver here: https://ibotpeaches.github.io/Apktool/
 
-Install Missing Packages manually or run.
+Copy this repository.
 type:
 
     git clone https://github.com/johnsmith80/Evil-Application.git
