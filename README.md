@@ -12,7 +12,8 @@ Its come with apktool version 2.4.1
 
 check out other ver here: https://ibotpeaches.github.io/Apktool/
 
-Copy this repository.
+Copy this repository type the following commands.
+
 type:
 
     git clone https://github.com/johnsmith80/Evil-Application.git
@@ -21,6 +22,7 @@ type:
     sudo ./install.sh or sudo bash install.sh
 
 It will install all packages that are missing and it will automaticaly start...
+
 Next use:
 
     sudo ./evil
