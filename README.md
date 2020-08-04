@@ -1,22 +1,21 @@
 # Evil-Application
-" _____       _ _      _                _ _           _   _             "
-"| ____|_   _(_) |    / \   _ __  _ __ | (_) ___ __ _| |_(_) ___  _ __  "
-"|  _| \ \ / / | |   / _ \ | '_ \| '_ \| | |/ __/ _` | __| |/ _ \| '_ \ "
-"| |___ \ V /| | |  / ___ \| |_) | |_) | | | (_| (_| | |_| | (_) | | | |"
-"|_____| \_/ |_|_| /_/   \_\ .__/| .__/|_|_|\___\__,_|\__|_|\___/|_| |_|"
-"                          |_|   |_|                                    "
-                                                                        
-                                                    by: Johnsmith80
 
-Its come with apktool version 2.4.1
+<br />
+
+#Its come with apktool version 2.4.1
+
+<br/>
+
 check out other ver here: https://ibotpeaches.github.io/Apktool/
+
+<br/>
 
 If you want the advance feature goto apktool_v2.4.1 directory then
 execute:
     chmod +x *
     sudo ./install.sh or sudo bash install.sh
 
-Usage:
+#Usage:
     chmod +x install.sh
     sudo ./install.sh or sudo bash install.sh
 It will install all packages that are missing and it will automaticaly start...
