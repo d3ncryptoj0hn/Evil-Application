@@ -33,4 +33,8 @@ Dont use for illegal purposes,
 
 im not responsible on any malicious use of this tool.
 
+report issue here: https://github.com/johnsmith80/Evil-Application/issues
+
+Will try to fegure out your problem with this tool.
+
 Happy Learning!
