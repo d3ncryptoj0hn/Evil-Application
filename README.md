@@ -11,7 +11,11 @@ check out other ver here: https://ibotpeaches.github.io/Apktool/
 <br/>
 
 If you want the advance feature goto apktool_v2.4.1 directory then
+
 execute:
+
+<br/>
+
     chmod +x *
     sudo ./install.sh or sudo bash install.sh
 
