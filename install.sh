@@ -16,4 +16,4 @@ echo ""
 sleep 2
 sudo update-alternatives --config java
 chmod ug+x evil
-chmod ug+x .banner/evil.sh
+chmod ug+x banner/evil.sh
