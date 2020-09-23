@@ -50,3 +50,10 @@ report issue here: https://github.com/johnsmith80/Evil-Application/issues
 Will try to fegure out your problem with this tool.
 
 Happy Learning!
+
+[Watch on Youtube](https://www.youtube.com/watch?v=jKvJQMQGxTA)
+
+Follow me:
+[Facebook](https://web.facebook.com/h4ckitnow)
+[Tiktok](https://www.tiktok.com/@johnsmith0911)
+[Twitter](https://twitter.com/John44233759)
