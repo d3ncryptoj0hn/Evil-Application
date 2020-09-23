@@ -54,7 +54,7 @@ Happy Learning!
 [Watch on Youtube](https://www.youtube.com/watch?v=jKvJQMQGxTA)
 
 Follow me:
-+[Facebook](https://web.facebook.com/h4ckitnow)
-+[Tiktok](https://www.tiktok.com/@johnsmith0911)
-+[Twitter](https://twitter.com/John44233759)
-+[Youtube](https://www.youtube.com/channel/UCV5gF3dWxUOFoGA7P9NGviQ)
++ [Facebook](https://web.facebook.com/h4ckitnow)
++ [Tiktok](https://www.tiktok.com/@johnsmith0911)
++ [Twitter](https://twitter.com/John44233759)
++ [Youtube](https://www.youtube.com/channel/UCV5gF3dWxUOFoGA7P9NGviQ)
