@@ -72,6 +72,7 @@ fi
 if [[ -e infected.apk/lastexecute.txt ]]; then
 rm infected.apk/lastexecute.txt
 fi
+echo ""
 sleep 1
 printf "${BG}CLEANED\n"
 sleep 1
@@ -124,6 +125,8 @@ then
     sudo apt install xterm
 fi
 clear
+./banner/evil2.sh
+echo ""
 sleep 0.5
 printf "\n${BG}APKTOOL...OK"
 sleep 0.5
